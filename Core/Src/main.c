@@ -18,8 +18,14 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+
+#include "bsp_dwt.h"
 #include "cmsis_os.h"
+#include "dma.h"
+#include "spi.h"
+#include "tim.h"
 #include "gpio.h"
+#include "ins_task.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -88,8 +94,14 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_DMA_Init();
+  MX_SPI1_Init();
+  MX_TIM10_Init();
   /* USER CODE BEGIN 2 */
-
+  DWT_Init(168);
+  while (BMI088_init(&hspi1, 1) != BMI088_NO_ERROR)
+    ;
+  INS_Init();
   /* USER CODE END 2 */
 
   /* Init scheduler */

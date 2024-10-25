@@ -48,11 +48,29 @@ else ()
     add_compile_options(-Og -g)
 endif ()
 
-include_directories(${includes})
+include_directories(${includes}
+    Algorithm
+    Application
+    Bsp
+    Components
+    Controller
+    Devices
+    DSP_Lib/Include
+    Task
+)
 
 add_definitions(${defines})
 
-file(GLOB_RECURSE SOURCES ${sources})
+file(GLOB_RECURSE SOURCES ${sources}
+    "Algorithm/*.*"
+    "Application/*.*"
+    "Bsp/*.*"
+    "Components/*.*"
+    "Controller/*.*"
+    "Devices/*.*"
+    "DSP_Lib/*.*"
+    "Task/*.*"
+)
 
 set(LINKER_SCRIPT $${CMAKE_SOURCE_DIR}/${linkerScript})
 
