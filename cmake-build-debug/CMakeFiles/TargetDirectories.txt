@@ -1,0 +1,3 @@
+C:/Users/73932/CLionProjects/RM_FreeRTOS/cmake-build-debug/CMakeFiles/RM_FreeRTOS.elf.dir
+C:/Users/73932/CLionProjects/RM_FreeRTOS/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/73932/CLionProjects/RM_FreeRTOS/cmake-build-debug/CMakeFiles/rebuild_cache.dir
